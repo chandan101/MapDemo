@@ -72,10 +72,13 @@ export class HomePage {
       this.geolocation.getCurrentPosition().then((position) => {
 	    this.coords = position.coords;
 	    console.log('Location', this.coords);
-	    this.loadMap();
+	    if(this.coords.latitude){
+	    	this.loadMap();
+	    }
       }, (err) => {
         if(err.code == 1 && err.message == "Illegal Access"){
           console.log('Please turn on location to continue.');  
+          this.is_Location = false;
         }else{
           console.log('Something went wrong, please try again.');
         }
@@ -90,11 +93,7 @@ export class HomePage {
   		let self = this;
 	  	let successCallback = (isAvailable) => {
 	  		console.log('Is available? ' + isAvailable);
-	  		if(isAvailable){
-	  		  self.getCrrentLocation();
-	  		}else{
-	  		  self.is_Location = false;
-	  		} 
+	  		self.getCrrentLocation();
 	  	};
 		let errorCallback = (e) => console.error('Error', e);
 
@@ -108,7 +107,7 @@ export class HomePage {
 	          self.getCrrentLocation();
 	        }
 	        if(state == "location_off"){
-	          self.is_Location = false;
+	        self.is_Location = false;
 	        }
 	    });
 
