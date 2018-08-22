@@ -1,3 +1,36 @@
-page-home {
-
+ion-app._gmaps_cdv_ .nav-decor{
+  background-color: transparent !important;
 }
+.scroll-content{ padding: 5px !important; }
+
+page-home {
+	
+    #map {
+        height: 100%;
+        width:100%;
+    }
+
+    .text{
+    	fonnt-size:14px;
+    	text-align:center;
+    	color: red;
+    }
+
+    .toolbar-background.toolbar-background-md, .toolbar-background.toolbar-background-ios{
+    	background-color: #4972b0;
+    }
+
+    .toolbar-title-md, .toolbar-title-ios{
+	    color: #fff;
+	    font-size: 18px;
+	    font-weight: 400;
+	    padding: 0 12px;
+	    font-family: 'muliregular';
+    }
+
+    .toolbar-title-md, .toolbar-title-ios {
+    	text-align: center;
+	}
+	.toolbar-md{ min-height: 50px;}
+}	
+
